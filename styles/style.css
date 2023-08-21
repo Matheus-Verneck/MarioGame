@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", cursive;
+}
+
+.game-board {
+    width: 100%;
+    height: 90vh;
+    border-bottom: 15px solid #03a51e;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 700ms ease-out;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    animation: clouds-animation 18s infinite linear;
+}
+
+footer {
+    position: absolute;
+    background-color: rgb(19, 18, 18);
+    height: 10vh;
+    width: 100%;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 998;
+  }
+
+.game-over {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 50vh;
+    width: 70vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: solid 1px white;
+    padding: 20px;
+    z-index: 999;
+  }
+  
+  .game-over-text {
+    font-size: 30px;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 120px;
+  }
+  
+  .restart-button {
+      padding: 10px;
+      font-size: 15px;
+      background: #03a51e;
+      color: white;
+      border: solid 1px;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 1000;
+}
+
+.restart-button:hover {
+    background: #046614;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -50px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 200px;
+    }
+    50% {
+        bottom: 200px;
+    }
+    60%{
+        bottom: 200px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -540px;
+    }
+    to {
+        right: 100%;
+    }
+}
